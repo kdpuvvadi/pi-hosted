@@ -22,4 +22,6 @@
     - name: install portainer
       import_tasks: tasks/portainer.yml
       when: portainer_enable
-      
+
+    - name: install shell in a box
+      import_tasks: tasks/shellinabox.yml
