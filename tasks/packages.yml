@@ -1,0 +1,14 @@
+---
+- name: Install packages/prerequisites
+  apt:
+    name:
+      - curl
+      - python3
+      - python3-pip
+      - apt-transport-https
+      - ca-certificates
+      - software-properties-common
+      - virtualenv
+      - python3-setuptools
+    state: present
+    cache_valid_time: 3600
