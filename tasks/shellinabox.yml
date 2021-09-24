@@ -1,0 +1,6 @@
+---
+
+- name: Install shell in the box
+  apt:
+    name: shellinabox
+    state: present

@@ -23,7 +23,7 @@ jobs:
         run: ansible-lint --version
       
       - name: check yaml lint version
-        run: yaml-lint --version
+        run: yamllint --version
 
       - name: Ansible Lint
         run: ansible-lint .
