@@ -1,0 +1,13 @@
+---
+- hosts: all
+  become: true
+
+  pre_tasks:
+    - name: Config
+      include_vars: vars.yml
+
+    - name: apt cache update & Upgrade
+      apt:
+        update_cache: true
+        cache_valid_time: 3600
+        upgrade: full
