@@ -1,0 +1,17 @@
+---
+- name: Create a homer directory
+  ansible.builtin.file:
+    path: /home/{{ ansible_user }}/portainer/appdata/homer
+    state: directory
+    mode: '0755'
+
+- name: deploy homer docker container
+  community.docker.docker_container:
+    name: home
+    image: b4bz/homer
+    ports:
+      - 8902:8080
+    volumes:
+      - "/home/{{ ansible_user }}/portainer/appdata/homer/assets:/www/assets"
+      - "/home/{{ ansible_user }}/portainer/appdata/homer/:/www/config.yml"
+    restart_policy: always
