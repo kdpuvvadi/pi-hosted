@@ -1,0 +1,17 @@
+---
+
+- name: Create a guacamole directory
+  ansible.builtin.file:
+    path: /home/{{ ansible_user }}/portainer/appdata/guacamole
+    state: directory
+    mode: '0755'
+
+- name: deploy guacamole docker container
+  community.docker.docker_container:
+    name: guacamole
+    image: oznu/guacamole
+    ports:
+      - 9100:8080
+    volumes:
+      - "/home/{{ ansible_user }}/portainer/appdata/guacamole/assets:/config"
+    restart_policy: always
