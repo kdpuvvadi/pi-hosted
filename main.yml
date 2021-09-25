@@ -25,6 +25,7 @@
 
     - name: install shell in a box
       import_tasks: tasks/shellinabox.yml
+      when: shellinabox_enable
 
     - name: install homer dashboard
       import_tasks: tasks/homer.yml
