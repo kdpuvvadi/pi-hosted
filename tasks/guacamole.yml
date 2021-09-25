@@ -13,5 +13,5 @@
     ports:
       - 9100:8080
     volumes:
-      - "/home/{{ ansible_user }}/portainer/appdata/guacamole/assets:/config"
+      - "/home/{{ ansible_user }}/portainer/appdata/guacamole:/config"
     restart_policy: always
