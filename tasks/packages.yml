@@ -12,3 +12,7 @@
       - python3-setuptools
     state: present
     cache_valid_time: 3600
+
+- name: install python docker SDK
+  pip:
+    name: docker
