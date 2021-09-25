@@ -13,5 +13,4 @@
       - 8902:8080
     volumes:
       - "/home/{{ ansible_user }}/portainer/appdata/homer/assets:/www/assets"
-      - "/home/{{ ansible_user }}/portainer/appdata/homer/:/www/config.yml"
     restart_policy: always
