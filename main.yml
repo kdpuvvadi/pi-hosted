@@ -26,7 +26,7 @@
     - name: install shell in a box
       import_tasks: tasks/shellinabox.yml
       when: shellinabox_enable
-    
+
     - name: install guacamole
       import_tasks: tasks/guacamole.yml
       when: guac_enable
