@@ -14,3 +14,8 @@
     volumes:
       - "/home/{{ ansible_user }}/portainer/appdata/homer/assets:/www/assets"
     restart_policy: always
+
+- name: copy homer config file
+  template:
+    src: assets/homer_config.yml.j2
+    dest: /home/{{ ansible_user }}/portainer/appdata/homer/assets/config.yml
