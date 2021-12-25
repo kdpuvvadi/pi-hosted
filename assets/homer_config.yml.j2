@@ -59,24 +59,32 @@ services:
         icon: "fab fa-docker"
         subtitle: "Docker"
         tag: "app"
-        url: "http://143.110.185.62:9000/"
+        url: "https://{{ ansible_facts['default_ipv4']['address'] }}:9443"
         target: "_blank"
-
+      
       - name: "Guacamole"
         icon: "fas fa-desktop"
         subtitle: "Remote access"
         tag: "app"
-        url: "http://143.110.185.62:9100/"
+        url: "http://{{ ansible_facts['default_ipv4']['address'] }}:9100/"
         target: "_blank"
 
   - name: "Utilities"
     icon: "fas fa-tools"
 
     items:
+      - name: "Pi-Hole"
+        logo: "https://raw.githubusercontent.com/NX211/homer-icons/master/png/pihole.png"
+        subtitle: "DNS"
+        tag: "dns"
+        tagstyle: "is-success"
+        url: "http://{{ ansible_facts['default_ipv4']['address'] }}:9443"
+        target: "_blank"
+      
       - name: "Shell in a Box"
         icon: "fas fa-terminal"
         subtitle: "Another application"
         tag: "utility"
         tagstyle: "is-success"
-        url: "https://143.110.185.62:4200"
+        url: "https://{{ ansible_facts['default_ipv4']['address'] }}:4200"
         target: "_blank"

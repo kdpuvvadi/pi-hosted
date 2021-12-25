@@ -1,0 +1,22 @@
+---
+
+- name: Create Pi-hole folder on Pi.
+  ansible.builtin.file:
+    path: "/home{{ ansible_user }}/pi-hole"
+    state: directory
+    mode: 0755
+  become: false
+
+- name: Copy Pi-hole docker-compose template to Pi.
+  ansible.builtin.template:
+    src: config/pihole-compose.yml.j2
+    dest: "/home{{ ansible_user }}/pi-hole/docker-compose.yml"
+    mode: '0640'
+  become: false
+
+- name: Install pi-hole
+  community.docker.docker_compose:
+    project_src: "/home{{ ansible_user }}/pi-hole/"
+    build: false
+    restarted: true
+  become: false

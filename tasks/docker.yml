@@ -37,5 +37,11 @@
     groups: docker
     append: true
 
+- name: Install Docker Compose using Pip.
+  pip:
+    name: docker-compose
+    state: present
+    executable: pip3
+
 - name: Reset connection
   meta: reset_connection
