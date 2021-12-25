@@ -9,7 +9,7 @@
 - name: deploy guacamole docker container
   community.docker.docker_container:
     name: guacamole
-    image: guacamole:armhf
+    image: oznu/guacamole:armhf
     ports:
       - 9100:8080
     volumes:
